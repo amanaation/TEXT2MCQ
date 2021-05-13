@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- basic page needs
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>TEXT2MCQ</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+   <!-- mobile specific metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+ 	<!-- CSS
+   ================================================== -->
+   <link rel="stylesheet" href="/static/css/base.css">
+   <link rel="stylesheet" href="/static/css/main.css">
+   <link rel="stylesheet" href="/static/css/vendor.css">
+   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+   <!-- script
+   ================================================== -->
+	<script src="/static/js/modernizr.js"></script>
+	<script src="/static/js/pace.min.js"></script>
+
+  <style>  input[type=submit] {
+    width: 200px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+  </style>
+   <!-- favicons
+	================================================== -->
+
+</head>
+
+<body id="top" style="background-color:red">
+
+  <!-- header
+   ================================================== -->
+   <header>
+   	<div class="row">
+
+
+		         <!--<a href="index.html"><img src="/static/images/logo3.png" alt="About"></a>-->
+             <br>
+            <a href="https://amanaation.github.io"> <p style=  "color:white"> About the Dev
+            </p></a>
+
+   	</div> <!-- /row -->
+   </header> <!-- /header -->
+
+	<!-- intro section
+   ================================================== -->
+   <section id="intro" style="background-color:#000000">
+
+   	<div class="intro-overlay"></div>
+
+   	<div class="intro-content">
+   		<div class="row">
+
+   			<div class="col-twelve">
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+
+	   			<!--<h1 style="color:red">INSTASEARCH</h1>-->
+          <img src="/static/images/logo2.png">
+
+	   			<h3 style=  "color:white">Get the MCQ questions created of off your text along with exteremly accurate MCQ answers. Just paste the text
+             you want to have your MCQ regarding. And click on Generate MCQ button.</h3>
+
+          <br>
+          <center>
+            <form class="searchform cf" method="POST" action= "/mydata"> {% csrf_token %}
+              <input type="text"   size="1000" placeholder="Paste your text here...." name="query">
+              <br/>
+              <br/>
+              <br/>
+
+            <input type="submit" value="Generate MCQ!!" style="background:black; color:White; border: 2px solid white"></a>
+            </form>
+          </center>
+        </div></div></div></section>
+</body>
+
+</html>

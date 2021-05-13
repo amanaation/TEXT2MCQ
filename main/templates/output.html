@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		h3{
+
+			padding-left: 30px;
+
+		}
+		div{
+			padding-top: 50px;
+		}
+		ul{
+			padding-left: 80px;
+		}
+		a,center {
+			background-color: white;
+			color:black;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body style="background-color: black">
+
+	<center> <a href="/static/MCQ.txt" title="Download MCQ"
+		download="/static/MCQ.txt">Download MCQ</a>
+		<br>
+		<p> To generate MCQ for new test, please go back one page</p>
+	</center>
+
+	<br>
+  {% for questions, value in values.items %}
+
+	<div style="border:1px solid white;color: white">
+    <h3> {{questions}} </h3>
+		<ul>
+			{{ value | safe }}
+		</ul>
+	</div>
+  {% endfor %}
+</body>
+</html>
