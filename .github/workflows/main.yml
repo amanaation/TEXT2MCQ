@@ -41,7 +41,9 @@ jobs:
       run: |
         # Build a docker container and push it to ECR
         aws ecr get-login-password --region us-east-1 | docker login --username ${{secrets.USERNAME}} --password-stdin ${{secrets.USERID}}.dkr.ecr.us-east-1.amazonaws.com
-        docker build -t $ECR_REPOSITORY:$IMAGE_TAG .
+        docker build -t github-actions-test .
+        docker tag github-actions-test:latest ${{secrets.USERID}}.dkr.ecr.us-east-1.amazonaws.com/github-actions-test:latest
         echo "Pushing image to ECR..."
-        docker push $ECR_REPOSITORY:$IMAGE_TAG
-        echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+        docker push ${{secrets.USERID}}.dkr.ecr.us-east-1.amazonaws.com/github-actions-test:latest
+        # docker push $ECR_REPOSITORY:$IMAGE_TAG
+        # echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
